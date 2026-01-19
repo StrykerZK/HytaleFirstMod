@@ -1,16 +1,16 @@
 {
-  "Group": "dev.hytalemodding",
-  "Name": "ExamplePlugin",
-  "Version": "${version}",
+  "Group": "dev.zeetest",
+  "Name": "FirstMod",
+  "Version": "0.0.1",
   "Description": "Description of your plugin",
   "Authors": [
     {
-      "Name": "Your Name",
-      "Email": "your.email@example.com",
-      "Url": "https://your-website.com"
+      "Name": "Zee",
+      "Email": "",
+      "Url": ""
     }
   ],
-  "Website": "https://your-plugin-website.com",
+  "Website": "",
   "ServerVersion": "*",
   "Dependencies": {},
   "OptionalDependencies": {},
