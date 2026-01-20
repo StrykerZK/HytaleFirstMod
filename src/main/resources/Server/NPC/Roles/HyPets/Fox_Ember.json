@@ -1,0 +1,96 @@
+{
+  "Type": "Variant",
+  "Reference": "Template_Predator",
+  "Modify": {
+    "Appearance": "Fox",
+    "DropList": "Drop_Fox",
+    "MaxHealth": 50,
+    "MaxSpeed": 9,
+    "WanderRadius": 10,
+    "ViewRange": 20,
+    "HearingRange": 15,
+    "AbsoluteDetectionRange": 4,
+    "AlertedRange": 20,
+    "AlertedTime": [
+      5,
+      10
+    ],
+    "$Comment": " --- BEHAVIOR CHANGES FOR HYPET --- ",
+    "MaintainDistanceWhileAlerted": false,
+    "ThreatenDelayRange": [
+      2,
+      2
+    ],
+    "ThreatenAnimation": "Threaten",
+    "FleeIfNotThreatened": false,
+    "FleeRange": 0,
+    "HardLeashDistance": 60,
+    "LeashDistance": 30,
+    "LeashMinPlayerDistance": 7,
+    "LeashTimer": [
+      4,
+      5
+    ],
+    "Attack": "Root_NPC_Fox_Attack",
+    "AttackDistance": 2.5,
+    "CombatBehaviorDistance": 10,
+    "CombatDirectWeight": 8,
+    "CombatStrafeWeight": 4,
+    "CombatBackOffAfterAttack": true,
+    "ChaseRelativeSpeed": 1,
+    "CombatMovingRelativeSpeed": 0.6,
+    "AlwaysSleepAtNight": false,
+    "NightFlavorAnimation": "Howl",
+    "DayTimeNapWeight": 6,
+    "DayTimeNapTimeRange": [
+      10,
+      12
+    ],
+    "TimidDuringDay": false,
+    "IsMemory": true,
+    "MemoriesCategory": "Predator",
+    "_InteractionVars": {
+      "Melee_Start": {
+        "Interactions": [
+          {
+            "Parent": "Fox_Bite",
+            "$Comment": "Sets animations and delay before hit",
+            "Effects": {
+              "ItemPlayerAnimationsId": "Fox_Default",
+              "ItemAnimationId": "Bite"
+            },
+            "RunTime": 0.167
+          }
+        ]
+      },
+      "Bite_Damage": {
+        "Interactions": [
+          {
+            "Parent": "Fox_Bite_Damage",
+            "DamageCalculator": {
+              "Type": "Absolute",
+              "BaseDamage": {
+                "Physical": 25
+              },
+              "RandomPercentageModifier": 0.1
+            },
+            "DamageEffects": {
+              "Knockback": {
+                "Force": 0.8
+              }
+            }
+          }
+        ]
+      }
+    },
+    "NameTranslationKey": {
+      "Compute": "NameTranslationKey"
+    }
+  },
+  "Parameters": {
+    "NameTranslationKey": {
+      "Value": "hypets.fox_ember.name",
+      "Description": "Translation key for NPC name display"
+    }
+  }
+}

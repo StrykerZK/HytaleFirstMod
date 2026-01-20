@@ -39,5 +39,4 @@ public class TestCommand extends AbstractPlayerCommand {
         String playerMessage = messageArg.get(commandContext);
         player.sendMessage(Message.raw("Message Argument: " + playerMessage));
     }
-
 }
