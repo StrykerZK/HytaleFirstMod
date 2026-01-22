@@ -1,11 +1,14 @@
 package dev.hytalemodding;
 
 import com.hypixel.hytale.logger.HytaleLogger;
+import com.hypixel.hytale.server.core.event.events.ecs.BreakBlockEvent;
+import com.hypixel.hytale.server.core.event.events.player.PlayerMouseButtonEvent;
 import com.hypixel.hytale.server.core.event.events.player.PlayerReadyEvent;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import dev.hytalemodding.commands.ExampleCommand;
 import dev.hytalemodding.commands.TestCommand;
+import dev.hytalemodding.events.BlockReplacerEvent;
 import dev.hytalemodding.events.ExampleEvent;
 
 import javax.annotation.Nonnull;
@@ -26,6 +29,7 @@ public class ExamplePlugin extends JavaPlugin {
 
         // Events registry
         this.getEventRegistry().registerGlobal(PlayerReadyEvent.class, ExampleEvent::onPlayerReady);
+        this.getEventRegistry().registerGlobal(PlayerMouseButtonEvent.class, BlockReplacerEvent::onPlayerClick);
 
         // Logging
         LOGGER.atInfo().log("My example plugin just loaded!");
